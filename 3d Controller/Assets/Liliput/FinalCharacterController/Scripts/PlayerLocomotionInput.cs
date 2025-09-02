@@ -1,4 +1,4 @@
-using Liliput.FinalChracterController;
+using Liliput.FinalCharacterController;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
