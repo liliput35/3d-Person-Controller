@@ -9,6 +9,7 @@ namespace Liliput.FinalCharacterController
     {
         [SerializeField] private CharacterController _characterController;
         [SerializeField] private Camera _playerCamera;
+        [SerializeField] private Animator _animator;
 
         [Header("Base Movement")]
         public float runAcceleration = 0.25f;
@@ -46,6 +47,9 @@ namespace Liliput.FinalCharacterController
 
             //MOVE CHARACTER
             _characterController.Move(newVelocity * Time.deltaTime);
+
+            float speed = new Vector3(newVelocity.x, 0, newVelocity.z).magnitude;
+            _animator.SetFloat("Speed", speed);
         }
 
         private void LateUpdate()
