@@ -11,6 +11,13 @@ namespace Liliput.FinalCharacterController
             CurrentPlayerMovementState = playerMovementState;
         }
 
+        public bool InGroundedState()
+        {
+            return CurrentPlayerMovementState == PlayerMovementState.Idling ||
+                    CurrentPlayerMovementState == PlayerMovementState.Walking ||
+                    CurrentPlayerMovementState == PlayerMovementState.Running ||
+                    CurrentPlayerMovementState == PlayerMovementState.Sprinting;
+        }
         
     }
 
